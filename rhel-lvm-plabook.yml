@@ -22,4 +22,4 @@
             mntp: /mnt/test_2
     manage_lvm: true
   roles:
-          - aia-ansible-manage-lvm
+          - rhel-ansible-manage-lvm
