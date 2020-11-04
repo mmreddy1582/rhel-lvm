@@ -1,0 +1,25 @@
+---
+- hosts: client1
+  become: true
+  vars:
+    lvm_groups:
+      - vgname: test-vg
+        disks:
+          - /dev/sdc
+        create: true
+        lvnames:
+          - lvname: test_1
+            size: 3g
+            create: true
+            filesystem: ext4
+            mount: true
+            mntp: /mnt/test_1
+          - lvname: test_2
+            size: 4g
+            create: true
+            filesystem: xfs
+            mount: true
+            mntp: /mnt/test_2
+    manage_lvm: true
+  roles:
+          - aia-ansible-manage-lvm
